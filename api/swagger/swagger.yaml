@@ -1,0 +1,170 @@
+swagger: "2.0"
+info:
+  version: 0.0.1
+  title: Skiller API
+  description: API services for Skiller Platform. All urls must be url encoded.
+  contact:
+    name: Nikhil Saini
+    url: https://pm.nikhilsaini.co.in/project/nikhilsaini38-inft-6900-project
+    email: nkhlsn38@gmail.com
+host: localhost:4000
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /swagger:
+    x-swagger-pipe: swagger_raw
+  /otp:
+    x-swagger-router-controller: otp
+    post:
+      summary: OTP endpoint
+      description: Generates an OTP and also creates a user if doesn't exist.
+      parameters:
+        - in: query
+          name: phone
+          description: Phone number of the user, must include country code.
+          type: string
+          required: true
+      responses:
+        200:
+          description: SUCCESS
+        401:
+          description: UNAUTHORIZED
+        500:
+          description: SERVER CANNOT GENERATE OTP
+  /login:
+    x-swagger-router-controller: login
+    get:
+      summary: Login endpoint
+      description: Login using number/otp or user/password
+      parameters:
+        - in: query
+          name: phone
+          description: Phone number for OTP
+          type: string
+        - in: query
+          name: otp
+          description: OTP that was sent using SMS
+          type: string
+        - in: query
+          name: username
+          description: Username for web login
+          type: string
+        - in: query
+          name: password
+          description: Password for web login
+          type: string
+      responses:
+        200:
+          description: SUCCESS
+        400:
+          description: BAD REQUEST
+        401:
+          description: UNAUTHORIZED
+  /users:
+    x-swagger-router-controller: users
+    get:
+      summary: List user(s)
+      description: List user(s)
+      responses:
+        200:
+          description: SUCCESS
+        401:
+          description: UNAUTHORIZED
+    put:
+      summary: Create user(s)
+      description: Create user(s)
+      responses:
+        200:
+          description: SUCCESS
+        401:
+          description: UNAUTHORIZED
+    post:
+      summary: Update user(s)
+      description: Update user(s)
+      responses:
+        200:
+          description: OK
+        401:
+          description: UNAUTHORIZED
+    delete:
+      summary: Delete user(s)
+      description: Delete user(s)
+      responses:
+        200:
+          description: OK
+        401:
+          description: UNAUTHORIZED
+  /freelancers:
+    x-swagger-router-controller: freelancers
+    get:
+      summary: List freelancer(s)
+      description: List freelancer(s)
+      responses:
+        200:
+          description: SUCCESS
+        401:
+          description: UNAUTHORIZED
+    put:
+      summary: Create freelancer(s)
+      description: Create freelancer(s)
+      responses:
+        200:
+          description: SUCCESS
+        401:
+          description: UNAUTHORIZED
+    post:
+      summary: Update freelancer(s)
+      description: Update freelancer(s)
+      responses:
+        200:
+          description: OK
+        401:
+          description: UNAUTHORIZED
+    delete:
+      summary: Delete freelancer(s)
+      description: Delete freelancer(s)
+      responses:
+        200:
+          description: OK
+        401:
+          description: UNAUTHORIZED
+  /tasks:
+    x-swagger-router-controller: tasks
+    get:
+      summary: List task(s)
+      description: List task(s)
+      responses:
+        200:
+          description: SUCCESS
+        401:
+          description: UNAUTHORIZED
+    put:
+      summary: Create task(s)
+      description: Create task(s)
+      responses:
+        200:
+          description: SUCCESS
+        401:
+          description: UNAUTHORIZED
+    post:
+      summary: Update task(s)
+      description: Update task(s)
+      responses:
+        200:
+          description: OK
+        401:
+          description: UNAUTHORIZED
+    delete:
+      summary: Delete task(s)
+      description: Delete task(s)
+      responses:
+        200:
+          description: OK
+        401:
+          description: UNAUTHORIZED
