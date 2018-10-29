@@ -1,6 +1,6 @@
 ////
 /// @page users/index
-/// @author Nikhil Saini
+/// @author Ankita Saini, Manpreet kaur
 /// @desc 
 ////
 

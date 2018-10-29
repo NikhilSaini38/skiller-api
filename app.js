@@ -6,12 +6,13 @@
 "use strict";
 //import global variable and methods
 require("./globals");
+let bodyParser = require('body-parser');
 
 var SwaggerExpress = require("swagger-express-mw");
 var Express = require("express");
 var app = Express();
 module.exports = app; // for testing
-
+app.use(bodyParser.json());
 var config = {
   appRoot: __dirname // required config
 };

@@ -3,6 +3,12 @@
 /// @author Nikhil Saini
 /// @desc 
 ////
-module.exports = ({ query, headers, parameters }, res) => {
-
+module.exports =async  ({ query, headers, parameters, body }, res) => {
+    let session=await verify(headers);
+    if(session){
+        console.log(body);
+    }else{
+        res.status(401);
+        res.json('Unauthorized');
+    }
 }

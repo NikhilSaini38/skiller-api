@@ -3,6 +3,6 @@
 /// @author Nikhil Saini
 /// @desc 
 ////
-module.exports = ({ query, headers, parameters }, res) => {
-
+module.exports = ({ query, headers, parameters, body }, res) => {
+    console.log(body);
 }
