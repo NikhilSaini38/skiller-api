@@ -1,12 +1,13 @@
 ////
 /// @page users/get
-/// @author Nikhil Saini
+/// @author Ankita Saini, Manpreet Kaur
 /// @desc 
 ////
 module.exports =async  ({ query, headers, parameters, body }, res) => {
     let session=await verify(headers);
     if(session){
-        console.log(body);
+        switch(query.method)
+        
     }else{
         res.status(401);
         res.json('Unauthorized');

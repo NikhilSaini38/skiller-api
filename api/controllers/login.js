@@ -1,5 +1,5 @@
 ////
-/// @author Nikhil Saini and Gurpreet Kaur
+/// @author Gurpreet Kaur, Ankita Saini, Manpreet Kaur
 /// @page controllers/login
 /// @desc A controller that returns a signed jwt if user is valid
 /// 
